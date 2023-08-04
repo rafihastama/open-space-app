@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import TalkInput from '../components/TalkInput';
 import TalksList from '../components/TalksList';
-import {useDispatch, useSelector} from "react-redux";
-import {asyncPopulateUsersAndTalks} from "../states/shared/action.js";
-import {asyncAddTalk, asyncToogleLikeTalk} from "../states/talks/action.js";
+import { asyncPopulateUsersAndTalks } from '../states/shared/action';
+import { asyncAddTalk, asyncToogleLikeTalk } from '../states/talks/action';
 
 function HomePage() {
   const {
@@ -21,8 +21,7 @@ function HomePage() {
 
   const onAddTalk = (text) => {
     // @TODO: dispatch async action to add talk
-    dispatch(asyncAddTalk({ text}));
-
+    dispatch(asyncAddTalk({ text }));
   };
 
   const onLike = (id) => {
